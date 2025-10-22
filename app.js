@@ -38,10 +38,7 @@ const flash = require("connect-flash");
 const session = require("express-session");   
 const router = require('./route/listing.js');
 const PORT = process.env.PORT || 8080;
-
 const dbURL = process.env.ATLASDB_URL
-
-
 const store = MongoStore.create({
     mongoUrl : dbURL,
     crypto : {
@@ -73,8 +70,6 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());      
 passport.deserializeUser(User.deserializeUser());     
 
-
-
 app.use(flash());  
 app.use((req , res , next) => {
     const successMsg = req.flash("success");
@@ -98,9 +93,6 @@ app.use("/listings", listingRouter);
 app.use("/listings/:id/review" , reviewRouter); 
 app.use("/", userRouter);
 
-
-
-
 main().then(() => console.log('connection is successful')).catch(err => console.log(err));
 
 async function main(){
@@ -112,7 +104,10 @@ async function main(){
 });
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3aceb8a7757ef3ee97460715b58b53a791791f78
 app.all(/.*/ , (req,res,next) => {
     next(new ExpressError(404 , "Page not found"));
 });
@@ -121,8 +116,6 @@ app.use((err , req , res ,next) => {
     let {statusCode = 500 , message = "Something went wrong!"} = err;
     res.status(statusCode).send(message);
 })
-
-
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
