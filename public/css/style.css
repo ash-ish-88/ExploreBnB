@@ -1,0 +1,684 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html ,body{
+    height: 100%;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+.grand {
+    height: 100%;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .parent {
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .child, a {
+    text-decoration: none !important;
+    color: black !important;
+  }
+
+  .txt {
+    height: 45px !important;
+    width: 300px !important;
+    text-align: center !important;
+    margin-top: 3px !important;
+    margin-bottom: 28px !important;
+  }
+
+  .txt h4 {
+    font-size: medium !important;
+  }
+
+  .txt h3 {
+    font-size: large !important;
+  }
+
+  .parent img {
+    height: 290px;
+    width: 290px;
+    border-radius: 10%;
+    margin: auto;
+    background-size: contain;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .parent {
+      margin: 0 auto;
+      justify-content: center;
+    }
+
+    .parent img {
+      height: 220px;
+      width: 220px;
+      margin-left:10px;
+    }
+
+    .txt {
+      width: 220px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .parent {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .parent img {
+      height: 200px;
+      width: 200px;
+    }
+
+    .txt {
+      width: 200px !important;
+    }
+  }
+
+.btns{
+            display: flex;
+            justify-content: space-between;
+        }
+.btn{
+            height: 50px;
+            width: 100px;
+            padding : 20px;
+            text-align: center;
+            background-color: blue;
+            color:white;
+            outline: none;
+            border-radius: 50px;
+            border:none;
+}
+.deletebtn {
+             height: 50px;
+            width: 100px;
+            padding : 20px;
+            text-align: center;
+            background-color: blue;
+            color:white;
+            outline: none;
+            border-radius: 50px;
+            border:none;
+            
+ }
+ .navbar{
+    height: 5rem;
+    background-color: white;
+ }
+ .fa-compass{
+    color:#fe424d;
+    font-size:2rem;
+ }
+ .nav-link{
+    color:#222222 !important;
+ }
+ /* footer start */
+.footercls{
+    height: 100%;
+    width: 100%;
+    margin-top:10px;
+    padding:25px;
+    text-align: center;
+    display: flex;
+    /* background: red; */
+    border-top : 1px solid rgb(232, 224, 224);
+    justify-content: center;
+    align-items: center;
+}
+.iconlfi{
+    font-size: 30px;
+}
+.footerchild p {
+    margin-top: 10px;
+}
+
+.newformparent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.newformchild {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 680px; 
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-row label {
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.form-row input,
+.form-row textarea,
+.form-row select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.form-row textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.valid-feedback {
+    color: #28a745;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+.invalid-feedback {
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+.newbtn {
+  display: block;
+  width: 60%;              
+  max-width: 250px;        
+  margin: 20px auto 0;     
+  padding: 10px 0;         
+    background: linear-gradient(90deg, #ff6b73, #fe424d);
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.newbtn:hover {
+    background: linear-gradient(135deg, #45a049, #4CAF50);
+    transform: scale(1.03);
+}
+
+
+@media (max-width: 500px) {
+    .newformchild {
+        padding: 20px;
+        width: 95%;
+    }
+
+    .form-row label {
+        font-size: 14px;
+    }
+
+    .newbtn {
+        font-size: 14px;
+    }
+}
+
+.newbtn:hover {
+  background: linear-gradient(135deg, #45a049, #4CAF50);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.3);
+}
+
+.newbtn:active {
+  transform: scale(0.97);
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  font-family: Arial, sans-serif;
+}
+
+
+.parentshow {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 2rem auto;
+    padding: 1rem;
+    max-width: 900px;
+}
+
+
+.childshow {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+
+.childshow img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.childshow h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.desbutshow p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.btnshow {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn, .deletebtn {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+}
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.deletebtn {
+    background-color: #dc3545;
+    color: white;
+}
+.deletebtn:hover {
+    background-color: #a71d2a;
+}
+
+/* Review section */
+div > h3 {
+    text-align: center;
+    margin-top: 2rem;
+    color: #222;
+}
+
+/* Review form */
+.formreviewwrite {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    font-family: "Poppins", "Segoe UI", Tahoma, sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formreviewwrite:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.formreviewwrite hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #28a745, #66bb6a);
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+}
+
+.formreviewwrite h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    color: #222;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* === Labels === */
+.formreviewwrite label {
+    display: block;
+    margin: 0.8rem 0 0.4rem 0;
+    font-weight: 500;
+    color: #444;
+}
+
+/* === Rating Slider === */
+.formreviewwrite input[type="range"] {
+    width: 100%;
+    margin-bottom: 1rem;
+    accent-color: #ff9800;
+    cursor: pointer;
+}
+
+/* === Comment Box === */
+.formreviewwrite textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    line-height: 1.5;
+    resize: none;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.formreviewwrite textarea:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.3);
+    outline: none;
+}
+
+/* === Validation Feedback === */
+.formreviewwrite .invalid-feedback {
+    font-size: 0.85rem;
+    color: #e74c3c;
+    margin-top: -0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.formreviewwrite .valid-feedback {
+    font-size: 0.85rem;
+    color: #28a745;
+    margin-top: -0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+/* === Submit Button Wrapper === */
+.formreviewwrite form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formreviewwrite .button-row {
+    display: flex;
+    justify-content: flex-end; /* ✅ right side */
+    margin-top: 1rem;
+}
+
+/* === Submit Button === */
+.formreviewwrite button {
+    background: linear-gradient(135deg, #28a745, #218838);
+    color: white;
+    padding: 0.75rem 1.6rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.formreviewwrite button:hover {
+    background: linear-gradient(135deg, #218838, #1c7430);
+    transform: scale(1.05);
+}
+
+
+/* only affects edit page */
+.listing-edit-parent {
+  background: #f8f9fa;  
+  min-height: 100vh;   
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;  
+  padding-bottom: 60px;
+}
+
+.listing-edit-form {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.listing-edit-form label {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.listing-edit-form input[type="text"],
+.listing-edit-form input[type="number"],
+.listing-edit-form input[type="file"],
+.listing-edit-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  /* margin-top:50px; */
+}
+
+.listing-edit-form textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.listing-edit-form button {
+  display: block;
+  width: 120px;
+  margin: 20px auto 0;
+  padding: 10px;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.15);
+  transition: background 0.3s ease;
+}
+
+.listing-edit-form button:hover {
+  background: #218838;
+}
+
+/* === Reviews Section Wrapper === */
+.review-section {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 1rem;
+    font-family: "Poppins", "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Section Title */
+.review-section h3 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.review-section h3::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: #ff9800;
+    margin: 0.6rem auto 0;
+    border-radius: 3px;
+}
+
+/* === Reviews Grid === */
+.review-list {
+    display: flex;
+    flex-wrap: wrap;   
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* === Individual Review Card === */
+.review-card {
+    flex: 1 1 280px;
+    max-width: 350px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.8rem 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+/* === Author === */
+.review-author {
+    font-weight: 600;
+    color: #444;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+/* === Stars === */
+.review-rating {
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+}
+
+.review-rating .star {
+    font-size: 1.6rem;
+    color: #ddd; 
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.review-rating .star.filled {
+    color: #ffb400;
+}
+
+.review-rating .star.filled:hover {
+    transform: scale(1.2);
+    color: #ffc94d;
+}
+
+/* === Comment === */
+.review-comment {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    font-style: italic;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    background: #f9f9f9;
+    border-radius: 12px;
+}
+
+/* === Delete Button === */
+.review-card form {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.review-card form button {
+    background: #ff5252;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.review-card form button:hover {
+    background: #e04848;
+}
+
+/* === Delete Button === */
+.deleteformshow-btn {
+    padding: 0.5rem 1.2rem;
+    border: none;
+    background: #e74c3c;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.deleteformshow-btn:hover {
+    background: #c0392b;
+    transform: scale(1.05);
+}
+
+.flash {
+  margin: 0;  
+  position: relative;
+  top: 5rem;  
+  z-index: 1000;
+}
+
+.signupbtn{
+    outline : 0;
+    border: none;
+}
+
+/* === Responsive Layout === */
+@media (max-width: 650px) {
+    .review-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .review-card {
+        width: 100%;
+        max-width: 90%;
+    }
+}
+

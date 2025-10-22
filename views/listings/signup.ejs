@@ -1,0 +1,124 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="card shadow-lg border-0 p-4 rounded-4">
+        <h2 class="text-center mb-4 title-text">
+          Sign Up on <span class="brand">ExploreBnB</span>
+        </h2>
+
+        <form action="/signup" method="POST" class="needs-validation" novalidate>
+          
+          <div class="mb-3">
+            <label for="username" class="form-label fw-semibold">Username</label>
+            <input 
+              type="text" 
+              name="username" 
+              id="username" 
+              class="form-control form-control-lg" 
+              required 
+              placeholder="Enter your username">
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label fw-semibold">Email</label>
+            <input 
+              type="email" 
+              name="email" 
+              id="email" 
+              class="form-control form-control-lg" 
+              required 
+              placeholder="Enter your email">
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label fw-semibold">Password</label>
+            <input 
+              type="password" 
+              name="password" 
+              id="password" 
+              class="form-control form-control-lg" 
+              required 
+              placeholder="Enter your password">
+          </div>
+
+          <button class="btn btn-gradient w-100 py-2 mt-3">
+            Sign Up
+          </button>
+
+          <p class="text-center mt-3 mb-0">
+            Already have an account? 
+            <a href="/login" class="text-decoration-none link-login">Login</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  body {
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .title-text {
+    color: #2b2b2b;
+    font-weight: 700;
+  }
+
+  .brand {
+    color: #fe424d;
+  }
+
+  .card {
+    margin-top: 50px;
+    background: #ffffff;
+    border-radius: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  }
+
+  /* 🔥 Red gradient button */
+  .btn-gradient {
+    background: linear-gradient(90deg, #fe424d, #ff6b73);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+
+  .btn-gradient:hover {
+    background: linear-gradient(90deg, #ff6b73, #fe424d);
+  }
+
+  .link-login {
+    color: #fe424d;
+    font-weight: 600;
+  }
+
+  /* ✅ Smaller placeholder text */
+  input::placeholder {
+    font-size: 0.9rem;
+    color: #999;
+  }
+
+  /* 📱 Mobile responsiveness */
+  @media (max-width: 576px) {
+    .card {
+      padding: 1.5rem;
+    }
+    h2 {
+      font-size: 1.4rem;
+    }
+    .btn-gradient {
+      font-size: 1rem;
+    }
+  }
+</style>

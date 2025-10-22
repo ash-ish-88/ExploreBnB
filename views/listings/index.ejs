@@ -1,0 +1,264 @@
+<% layout("/layouts/boilerplate.ejs")  %> 
+<style>
+ #filters {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5.8rem;
+    margin-left: 110px;
+    margin-right: 110px;
+  }
+
+  .filter {
+    text-align: center;
+    margin-left: 2rem;
+    opacity: 0.8;
+  }
+
+  .filter:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .tax-info {
+    display: none;
+    color: green;
+    font-size: 0.9rem;
+  }
+
+  .tax-toggle {
+    height: 50px;
+    width: auto;
+    border: 2px solid #fe424d;
+    border-radius: 50px;
+    margin-left: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    white-space: nowrap;
+  }
+
+  .filter a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* -------- Responsive & Scrollable Filters -------- */
+  @media (max-width: 992px) {
+    #filters {
+      overflow-x: auto;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+      margin: 5.5rem 20px 1rem 20px;
+      padding-bottom: 10px;
+      scrollbar-width: thin;
+      scrollbar-color: #fe424d transparent;
+    }
+
+    #filters::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    #filters::-webkit-scrollbar-thumb {
+      background-color: #fe424d;
+      border-radius: 10px;
+    }
+
+    .filter {
+      flex: 0 0 auto;
+      margin: 0 1rem;
+    }
+
+    .tax-toggle {
+      flex: 0 0 auto;
+      margin-left: 1rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    #filters {
+      padding-top: 15px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .filter {
+      margin: 0 0.7rem;
+    }
+
+    .tax-toggle {
+      margin: 0 1rem;
+      font-size: 0.9rem;
+      padding-top: 12px;
+    }
+  }
+
+</style>
+
+<div id="filters">
+  <div class="filter">
+    <a href="/listings">
+      <div><i class="fa-solid fa-fire"></i></div>
+      <p>Trending</p>
+    </a>
+  </div>
+
+  <div class="filter">
+    <a href="/listings/category/rooms">
+      <div><i class="fa-solid fa-bed"></i></div>
+      <p>Rooms</p>
+    </a>
+  </div>
+
+  <div class="filter">
+    <a href="/listings/category/iconiccities">
+      <div><i class="fa-solid fa-mountain-city"></i></div>
+      <p>Iconic Cities</p>
+    </a>
+  </div>
+
+  <div class="filter">
+    <a href="/listings/category/mountain">
+      <div><i class="fa-solid fa-mountain"></i></div>
+      <p>Mountain</p>
+    </a>
+  </div>
+
+  <div class="filter">
+    <a href="/listings/category/castles">
+      <div><i class="fa-brands fa-fort-awesome"></i></div>
+      <p>Castles</p>
+    </a>
+  </div>
+
+  <div class="filter">
+    <a href="/listings/category/amazingpools">
+      <div><i class="fa-solid fa-person-swimming"></i></div>
+      <p>Amazing Pools</p>
+    </a>
+  </div>
+
+  <div class="filter">
+    <a href="/listings/category/camping">
+      <div><i class="fa-solid fa-campground"></i></div>
+      <p>Camping</p>
+    </a>
+  </div>
+
+  <div class="filter">
+    <a href="/listings/category/farms">
+      <div><i class="fa-solid fa-cow"></i></div>
+      <p>Farms</p>
+    </a>
+  </div>
+
+  <div class="filter">
+    <a href="/listings/category/arctic">
+      <div><i class="fa-solid fa-snowflake"></i></div>
+      <p>Arctic</p>
+    </a>
+  </div>
+
+  <div class="filter">
+    <a href="/listings/category/boats">
+      <div><i class="fa-solid fa-sailboat"></i></div>
+      <p>Boats</p>
+    </a>
+  </div>
+
+  <div class="filter">
+    <a href="/listings/category/domes">
+      <div><i class="fa-solid fa-igloo"></i></div>
+      <p>Domes</p>
+    </a>
+  </div>
+
+  <div class="tax-toggle">
+    <div class="form-check-reverse form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+      <label class="form-check-label" for="switchCheckDefault">Display Total After Taxes</label>
+    </div>
+  </div>
+</div>
+
+<div class="grand">
+  <div class="parent">
+    <% allListings.forEach(listing => { %>
+      <div class="child">
+        <a href="/listings/<%= listing._id %>">
+          <img class="imgcls" src="<%= listing.image.url %>" alt="">
+        </a> 
+        <div class="txt">
+          <h4 class="price" data-original-price="<%= listing.price %>">
+            &#8377;<span class="price-value"><%= Number(listing.price).toLocaleString("en-IN") %></span>/night 
+            <i class="tax-info">+18% GST</i>
+          </h4>
+          <a href="/listings/<%=listing._id%>">
+            <h3 class="loctxt"><%= listing.location%>, <%= listing.country%></h3>
+          </a>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+<div class="load-more-container" style="text-align:center; margin: 30px 0;">
+  <button id="loadMoreBtn" 
+    style="padding: 10px 25px; 
+           border: none; 
+           background-color: #fe424d; 
+           color: white; 
+           border-radius: 25px; 
+           cursor: pointer;">
+    See More
+  </button>
+</div>
+
+<script>
+  const taxSwitch = document.getElementById("switchCheckDefault");
+
+  taxSwitch.addEventListener("click", () => {
+    const priceElements = document.querySelectorAll(".price");
+    const taxInfos = document.querySelectorAll(".tax-info");
+
+    priceElements.forEach((priceEl, index) => {
+      const originalPrice = parseFloat(priceEl.dataset.originalPrice);
+      const priceValueEl = priceEl.querySelector(".price-value");
+      const taxInfoEl = taxInfos[index];
+
+      if (taxSwitch.checked) {
+        const taxedPrice = originalPrice * 1.18;
+        priceValueEl.textContent = taxedPrice.toLocaleString("en-IN");
+        taxInfoEl.style.display = "inline";
+      } else {
+        priceValueEl.textContent = originalPrice.toLocaleString("en-IN");
+        taxInfoEl.style.display = "none";
+      }
+    });
+  });
+
+
+    const listings = document.querySelectorAll(".child");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+  let visibleCount = 16; //
+  const increment = 20; 
+
+  function showListings() {
+    listings.forEach((listing, index) => {
+      listing.style.display = index < visibleCount ? "block" : "none";
+    });
+
+    if (visibleCount >= listings.length) {
+      loadMoreBtn.style.display = "none";
+    }
+  }
+
+  showListings();
+
+  loadMoreBtn.addEventListener("click", () => {
+    visibleCount += increment;
+    showListings();
+  });
+
+
+
+</script>

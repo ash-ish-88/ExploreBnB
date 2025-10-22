@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Listing</title>
+ <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+ <div class="listing-edit-parent">
+  <form class="listing-edit-form" action="/listings/<%= listing._id %>?_method=PUT" method="post" enctype="multipart/form-data">
+      <label>Title :</label>
+      <input type="text" name="listing[title]" value="<%= listing.title %>">
+
+      <label>Description :</label>
+      <textarea rows="6" cols="10" name="listing[description]"><%= listing.description %></textarea>
+
+      <label>Location :</label>
+      <input type="text" name="listing[location]" value="<%= listing.location %>">
+
+      <label>Country :</label>
+      <input type="text" name="listing[country]" value="<%= listing.country %>">
+
+      <label>Price :</label>
+      <input type="number" name="listing[price]" value="<%= listing.price %>">
+      <div class="form-row">
+
+          <label for="category">Category :</label>
+          <select id="category" name="listing[category]" class="form-control" required>
+            <option value="" disabled selected>Select category</option>
+            <option value="trending">Trending</option>
+            <option value="rooms">Rooms</option>
+            <option value="iconiccities">Iconic Cities</option>
+            <option value="mountain">Mountain</option>
+            <option value="castles">Castles</option>
+            <option value="amazingpools">Amazing Pools</option>
+            <option value="camping">Camping</option>
+            <option value="farms">Farms</option>
+            <option value="arctic">Arctic</option>
+            <option value="boats">Boats</option>
+            <option value="domes">Domes</option>
+          </select>
+        </div>
+
+      <label>Image :</label>
+      <input type="file" name="listing[image]">
+
+      <button>Submit</button>
+  </form>
+</div>
+</body>
+</html>
