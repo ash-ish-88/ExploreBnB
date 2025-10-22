@@ -37,8 +37,7 @@ const User = require("./models/user.js");
 const flash = require("connect-flash");
 const session = require("express-session");   
 const router = require('./route/listing.js');
-
-
+const PORT = process.env.PORT || 8080;
 
 const dbURL = process.env.ATLASDB_URL
 
@@ -119,7 +118,9 @@ app.use((err , req , res ,next) => {
     res.status(statusCode).send(message);
 })
 
-app.listen(8080 , (req , res) => {
-    console.log("server listen on port number 8080");
-})
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 

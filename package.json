@@ -10,7 +10,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "build:css": "postcss ./public/css/style.css -o ./public/css/output.css --watch"
+    "start": "node app.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
