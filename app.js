@@ -104,9 +104,13 @@ app.use("/", userRouter);
 main().then(() => console.log('connection is successful')).catch(err => console.log(err));
 
 async function main(){
-    await  mongoose.connect(dbURL);
+    await mongoose.connect(dbURL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  tls: true,
+  tlsAllowInvalidCertificates: false
+});
 }
-
 
 
 app.all(/.*/ , (req,res,next) => {
