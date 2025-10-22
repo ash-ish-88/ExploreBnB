@@ -104,10 +104,6 @@ async function main(){
 });
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 3aceb8a7757ef3ee97460715b58b53a791791f78
 app.all(/.*/ , (req,res,next) => {
     next(new ExpressError(404 , "Page not found"));
 });
