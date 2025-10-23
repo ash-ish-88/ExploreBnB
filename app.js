@@ -85,6 +85,19 @@ app.use((req , res , next) => {
   res.render("listings/privacy.ejs");
 });
 
+const Listing = require("./models/listing.js"); 
+
+app.get("/", async (req, res) => {
+  try {
+    const allListings = await Listing.find(); 
+    res.render("listings/index", { allListings }); 
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error fetching listings");
+  }
+});
+
+
   app.get("/terms", (req, res) => {
   res.render("listings/terms.ejs");
 });
